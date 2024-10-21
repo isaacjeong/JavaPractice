@@ -7,7 +7,7 @@ public class Person {
         System.out.println(isaac.getName());
 
         Panda pubao = new Panda();
-        System.out.println(pubao.getName());
+//        System.out.println(pubao.getName());
     }
 }
 
