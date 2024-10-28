@@ -1,5 +1,9 @@
 import java.io.File;
-File myObj = new File("filename.txt");
+public class Files{
+    public static void main(String[] args) {
+        File myObj = new File("filename.txt");
+    }
+}
 //canRead()
 //canWrite()
 //createNewFile()
