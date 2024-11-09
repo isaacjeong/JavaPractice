@@ -13,5 +13,20 @@ public class ReversingAString {
             str = str + org.charAt(j);
         }
         System.out.println(str);
+
+
+
+        org = "Hello";
+        str = "";
+        String str2 = "";
+        for (int k = 0; k < org.length(); k++) {
+            str = str + org.charAt(k);
+            str2 = org.charAt(k) + str2;
+        }
+        System.out.println(str);
+        System.out.println(str2);
+
+
+
     }
 }
