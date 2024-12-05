@@ -6,5 +6,10 @@ public class UserAdditionCalculator {
         int firstNum = myObj.nextInt();
         int secondNum = myObj.nextInt();
         System.out.println(firstNum + secondNum);
+
+        System.out.println("Subtraction Now: ");
+        int SubtractFirst = myObj.nextInt();
+        int SubtractSecond = myObj.nextInt();
+        System.out.println(SubtractFirst - SubtractSecond);
     }
 }
