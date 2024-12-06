@@ -11,5 +11,10 @@ public class UserAdditionCalculator {
         int SubtractFirst = myObj.nextInt();
         int SubtractSecond = myObj.nextInt();
         System.out.println(SubtractFirst - SubtractSecond);
+
+        System.out.println("Division Now: ");
+        double DivisionFirst = myObj.nextInt();
+        double DivisionNext = myObj.nextInt();
+        System.out.println(DivisionFirst/DivisionNext);
     }
 }
