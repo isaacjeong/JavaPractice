@@ -3,11 +3,11 @@ import java.util.Scanner;
 public class Calculator {
     public static void main(String[] args) {
         Scanner myObj = new Scanner(System.in);
+        System.out.println("Enter Desired Method: ");
+        String operator = myObj.next();
         System.out.println("Pick two numbers: ");
         int firstNum = myObj.nextInt();
         int secondNum = myObj.nextInt();
-        System.out.println("Enter Desired Method: ");
-        String operator = myObj.next();
         System.out.println("Operator: " + operator);
         if (Objects.equals(operator, "+")) {
             System.out.println("You have selected Addition");
