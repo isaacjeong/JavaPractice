@@ -6,62 +6,87 @@ public class ATMProject {
 
         Scanner myObj = new Scanner(System.in);
         System.out.println("Please enter pin: ");
-        Integer userPin = myObj.nextInt();
+        int userPin = myObj.nextInt();
 
         Scanner balanceMoney = new Scanner(System.in);
         System.out.println("How much money do you currently own: ");
         int myBalance = balanceMoney.nextInt();
+        while (true) {
+            Scanner userChoice = new Scanner(System.in);
+            System.out.println("Welcome, please type in which option you would like");
+            System.out.println("Deposit: 1");
+            System.out.println("Withdrawal: 2");
+            System.out.println("Changing Your Pin: 3");
+            System.out.println("Bills: 4");
+            System.out.println("Leave: 5");
+            int choiceUser = userChoice.nextInt();
 
-        Scanner userChoice = new Scanner(System.in);
-        System.out.println("Welcome, please type in which option you would like");
-        System.out.println("Deposit: 1");
-        System.out.println("Withdrawal: 2");
-        System.out.println("Changing Your Pin: 3");
-        System.out.println("Bills: 4");
-        System.out.println("Leave: 5");
-        int choiceUser = userChoice.nextInt();
+            if (choiceUser == 1) {
+                System.out.println("You have picked Deposit");
 
-        if(choiceUser == 1){
-            System.out.println("You have picked Deposit");
+                Scanner depositMoney = new Scanner(System.in);
+                System.out.println("Enter how much you want to deposit: ");
+                int depositMyMoney = depositMoney.nextInt();
+                System.out.println("You have chosen to deposit $" + depositMyMoney);
+                System.out.println("You now have $" + (myBalance + depositMyMoney));
+                myBalance = myBalance + depositMyMoney;
 
-            Scanner depositMoney = new Scanner(System.in);
-            System.out.println("Enter how much you want to deposit: ");
-            int depositMyMoney = depositMoney.nextInt();
-            System.out.println("You have chosen to deposit $" + depositMyMoney);
-            System.out.println("You now have $" + (myBalance + depositMyMoney));
+            } else if (choiceUser == 2) {
+                System.out.println("You have picked Withdrawal");
 
-        } else if(choiceUser == 2) {
-            System.out.println("You have picked Withdrawal");
+                Scanner withDrawl = new Scanner(System.in);
+                System.out.println("Enter how much you want to Withdraw: ");
+                int withdrawMoney = withDrawl.nextInt();
 
-            Scanner withDrawl = new Scanner(System.in);
-            System.out.println("Enter how much you want to Withdraw: ");
-            int withdrawMoney = withDrawl.nextInt();
+                if (myBalance > withdrawMoney) {
+                    System.out.println("You now have $" + (myBalance - withdrawMoney) + " in your account");
+                    myBalance = myBalance - withdrawMoney;
+                } else if (myBalance < withdrawMoney) {
+                    System.out.println("You cannot withdraw that much because you do not have enough money!");
+                }
 
-            if(myBalance > withdrawMoney) {
-                System.out.println("You now have $" + (myBalance - withdrawMoney) + " in your account");
-            } else if(myBalance < withdrawMoney) {
-                System.out.println("You cannot withdraw that much because you do not have enough money!");
+            } else if (choiceUser == 3) {
+                System.out.println("You have picked Changing Your Pin");
+
+                Scanner pinChange = new Scanner(System.in);
+                System.out.println("What do you want your new pin to be?: ");
+                String myPinChange = pinChange.nextLine();
+
+                Scanner doubleCheck = new Scanner(System.in);
+                System.out.println("Double check your pin: ");
+                String doubleCheckPin = doubleCheck.nextLine();
+
+                if (myPinChange.equals(doubleCheckPin)) {
+                    System.out.println("Your pin has been changed");
+                } else {
+                    System.out.println("Wrong, Try again!");
+                }
+
+            } else if (choiceUser == 4) {
+                System.out.println("You have chosen Bills");
+
+                Scanner owedBill = new Scanner(System.in);
+                System.out.println("How much money do you owe the bank: ");
+                int owedBillNumber = owedBill.nextInt();
+
+                Scanner payBills = new Scanner(System.in);
+                System.out.println("Would you like to pay your bills?(Yes/No): ");
+                String confirmBills = payBills.nextLine();
+
+                if (confirmBills.equals("Yes")) {
+                    System.out.println("Okay, now have $" + (myBalance - owedBillNumber));
+                } else {
+                    System.out.println("Okay Have A Nice Day! ");
+                }
+
+                myBalance = myBalance - owedBillNumber;
+
+            } else if (choiceUser == 5) {
+                System.out.println("You have chosen to leave. Thank you!");
+                break;
+            } else {
+                System.out.println("Not a valid Choice");
             }
-
-        } else if(choiceUser == 3) {
-            System.out.println("You have picked Changing Your Pin");
-
-            Scanner pinChange = new Scanner(System.in);
-            System.out.println("What do you want your new pin to be?: ");
-            String myPinChange = pinChange.nextLine();
-            System.out.println("Double check by re-entering the pin: ");
-
         }
-//
-//
-//
-//
-//         else if(choiceUser == 4) {
-//            System.out.println("You have chosen Bills");
-//        } else if(choiceUser == 5) {
-//            System.out.println("You have chosen to leave. Thank you");
-//        } else {
-//            System.out.println("Not a valid Choice");
-//        }
     }
 }
