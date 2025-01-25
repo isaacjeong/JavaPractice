@@ -1,3 +1,5 @@
+package atm;
+
 import java.util.*;
 
 public class ATMProject {
@@ -10,15 +12,14 @@ public class ATMProject {
 
         Scanner balanceMoney = new Scanner(System.in);
         System.out.println("How much money do you currently own: ");
-        int myBalance = balanceMoney.nextInt();
+        double myBalance = balanceMoney.nextInt();
         while (true) {
             Scanner userChoice = new Scanner(System.in);
             System.out.println("Welcome, please type in which option you would like");
             System.out.println("Deposit: 1");
             System.out.println("Withdrawal: 2");
             System.out.println("Changing Your Pin: 3");
-            System.out.println("Bills: 4");
-            System.out.println("Leave: 5");
+            System.out.println("Leave: 4");
             int choiceUser = userChoice.nextInt();
 
             if (choiceUser == 1) {
@@ -63,25 +64,6 @@ public class ATMProject {
                 }
 
             } else if (choiceUser == 4) {
-                System.out.println("You have chosen Bills");
-
-                Scanner owedBill = new Scanner(System.in);
-                System.out.println("How much money do you owe the bank: ");
-                int owedBillNumber = owedBill.nextInt();
-
-                Scanner payBills = new Scanner(System.in);
-                System.out.println("Would you like to pay your bills?(Yes/No): ");
-                String confirmBills = payBills.nextLine();
-
-                if (confirmBills.equals("Yes")) {
-                    System.out.println("Okay, now have $" + (myBalance - owedBillNumber));
-                } else {
-                    System.out.println("Okay Have A Nice Day! ");
-                }
-
-                myBalance = myBalance - owedBillNumber;
-
-            } else if (choiceUser == 5) {
                 System.out.println("You have chosen to leave. Thank you!");
                 break;
             } else {
