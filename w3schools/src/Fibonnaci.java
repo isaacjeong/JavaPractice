@@ -7,7 +7,7 @@ public class Fibonnaci {
 
         Scanner firstFib = new Scanner(System.in);
         System.out.println("Enter your nth number: ");
-        long fibScanner = firstFib.nextInt() - 2;
+        long fibScanner = firstFib.nextLong() - 2;
 
         long sum = 0;
         for(long i = 0; i < fibScanner; i++){
