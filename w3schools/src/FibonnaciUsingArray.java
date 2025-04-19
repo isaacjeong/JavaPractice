@@ -17,7 +17,7 @@ public class FibonnaciUsingArray {
                 int previousNum = myArrayList.get(i - 1);
                 int prevPrevNum = myArrayList.get(i - 2);
                 myArrayList.add(previousNum + prevPrevNum);
-            } else if (i < 1) {
+            } else {
                 myArrayList.add(1);
             }
 //            System.out.println(myArrayList.getLast());
